@@ -1,0 +1,90 @@
+-- ============================================================
+--  SISTEMA DE REGISTRO ASISTENCIAS (bp2o 0.1.1)
+-- ============================================================
+
+CREATE DATABASE IF NOT EXISTS empresa_asistencia2
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+USE empresa_asistencia2;
+
+-- ============================================================
+-- Tabla: Funcionario
+-- ============================================================
+CREATE TABLE Funcionario (
+    id_funcionario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    telefono VARCHAR(15),
+    departamento ENUM('RRHH', 'Contabilidad', 'TI', 'Logistica') NOT NULL,
+    es_admin BOOLEAN DEFAULT FALSE,
+    fecha_contratacion DATE,
+    activo BOOLEAN DEFAULT TRUE COMMENT 'TRUE = Activo, FALSE = Inactivo',
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ============================================================
+-- Tabla: HorarioProgramado
+-- ============================================================
+CREATE TABLE HorarioProgramado (
+    id_horario INT AUTO_INCREMENT PRIMARY KEY,
+    id_funcionario INT NOT NULL,
+    dia_semana ENUM('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo') NOT NULL,
+    hora_entrada TIME NOT NULL,
+    hora_salida TIME NOT NULL,
+    es_excepcion BOOLEAN DEFAULT FALSE,
+    fecha_excepcion DATE,
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionario(id_funcionario)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- ============================================================
+-- Tabla: Festivo
+-- ============================================================
+CREATE TABLE Festivo (
+    id_festivo INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    fecha DATE NOT NULL,
+    tipo ENUM('Festivo', 'Vacaciones', 'Cumpleanos', 'Otro') NOT NULL,
+    descripcion TEXT
+);
+
+-- ============================================================
+-- Tabla: RegistroAsistencia
+-- ============================================================
+CREATE TABLE RegistroAsistencia (
+    id_registro INT AUTO_INCREMENT PRIMARY KEY,
+    id_funcionario INT NOT NULL,
+    fecha DATE NOT NULL,
+    hora_ingreso TIME,
+    hora_salida TIME,
+    estado ENUM('Presente', 'Ausente', 'Tarde', 'Licencia_Medica', 'Entrada_Colacion', 'Salida_Colacion') NOT NULL,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_festivo INT,
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionario(id_funcionario)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_festivo) REFERENCES Festivo(id_festivo)
+        ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+-- ============================================================
+-- Tabla: Justificacion
+-- ============================================================
+CREATE TABLE Justificacion (
+    id_justificacion INT AUTO_INCREMENT PRIMARY KEY,
+    id_funcionario INT NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    motivo TEXT NOT NULL,
+    estado ENUM('Pendiente', 'Aprobado', 'Rechazado') DEFAULT 'Pendiente',
+    id_admin_aprobador INT,
+    fecha_aprobacion DATETIME,
+    comentario_admin TEXT,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionario(id_funcionario)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_admin_aprobador) REFERENCES Funcionario(id_funcionario)
+        ON DELETE SET NULL ON UPDATE CASCADE
+);
