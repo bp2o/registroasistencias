@@ -3,41 +3,42 @@
 Aplicación hecha con Java (MVC), y con base de datos MySQL para gestionar horarios y asistencias de funcionarios.
 
 ## Estructura del proyecto
-📦 src
-└── 📁 app
-　　├── 🎮 controllers
-　　│　 ├── LoginController.java
-　　│　 └── RegisterController.java
-　　│
-　　├── 🗃️ dao
-　　│　 ├── AdminDAO.java
-　　│　 ├── FuncionarioDAO.java
-　　│　 ├── HorarioDAO.java
-　　│　 └── JustificacionDAO.java
-　　│
-　　├── 🧠 models
-　　│　 ├── Administrador.java
-　　│　 ├── Funcionario.java
-　　│　 ├── HorarioProgramado.java
-　　│　 └── Justificacion.java
-　　│
-　　├── ⚙️ utils
-　　│　 ├── DBConnection.java
-　　│　 ├── PasswordUtils.java
-　　│　 └── UITheme.java
-　　│
-　　├── 🪟 views
-　　│　 ├── AdminDashboardView.java
-　　│　 ├── AdminHorariosView.java
-　　│　 ├── AdminJustificacionesView.java
-　　│　 ├── FuncionarioCrearJustificacionView.java
-　　│　 ├── FuncionarioDashboardView.java
-　　│　 ├── FuncionarioHorariosView.java
-　　│　 ├── HorarioFormView.java
-　　│　 ├── LoginView.java
-　　│　 └── RegisterView.java
-　　│
-　　└── 🚀 Main.java
+src/
+└── app/
+    ├── controllers/
+    │   ├── LoginController.java
+    │   └── RegisterController.java
+    │
+    ├── dao/
+    │   ├── AdminDAO.java
+    │   ├── FuncionarioDAO.java
+    │   ├── HorarioDAO.java
+    │   └── JustificacionDAO.java
+    │
+    ├── models/
+    │   ├── Administrador.java
+    │   ├── Funcionario.java
+    │   ├── HorarioProgramado.java
+    │   └── Justificacion.java
+    │
+    ├── utils/
+    │   ├── DBConnection.java
+    │   ├── PasswordUtils.java
+    │   └── UITheme.java
+    │
+    ├── views/
+    │   ├── AdminDashboardView.java
+    │   ├── AdminHorariosView.java
+    │   ├── AdminJustificacionesView.java
+    │   ├── FuncionarioCrearJustificacionView.java
+    │   ├── FuncionarioDashboardView.java
+    │   ├── FuncionarioHorariosView.java
+    │   ├── HorarioFormView.java
+    │   ├── LoginView.java
+    │   └── RegisterView.java
+    │
+    └── Main.java
+
 
 ## Funcionalidades principales
 - Inicio de sesión para Administradores y Funcionarios
