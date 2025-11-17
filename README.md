@@ -53,6 +53,11 @@ src/
 2. Extraer el archivo y entrar en el archivo java "App"
 
 ## En caso de no se conecte base de datos
+
+- Create la base de datos con el archivo de texto "nose", en MySQL
+
+- Añade el driver de mysql connector al programa
+
 - Puedes entrar en los archivos locales, para editar los datos de tu servidor
 ```bash
 C:\...\RegistroAsistencia\src\utils\DBConnection.java
@@ -64,7 +69,5 @@ C:\...\RegistroAsistencia\src\utils\DBConnection.java
     private static final String URL = "jdbc:mysql://localhost:33065/empresa_asistencia2"; // Editar tu url
     private static final String USER = "root"; // Editar tu user
     private static final String PASS = ""; // Editar tu contraseña
-
-    private static Connection connection = null;
 
     // ================================================ //
