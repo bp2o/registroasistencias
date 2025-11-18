@@ -48,9 +48,9 @@ src/
 - Swing (interfaz gráfica)
 
 ## Cómo ejecutar
-1. Descargar el archivo registroasistencias.zip
+1. Descargar el archivo registroasistencias 0.1.3.zip
 
-2. Extraer el archivo y entrar en el archivo java "App"
+2. Extraer el archivo e ingresarlo al archivo local de su IDE
 
 ## En caso de no se conecte base de datos
 
