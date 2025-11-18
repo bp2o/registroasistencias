@@ -1,5 +1,5 @@
 -- ============================================================
---  SISTEMA DE REGISTRO ASISTENCIAS (bp2o 0.1.1)
+--  SISTEMA DE REGISTRO ASISTENCIAS (bp2o 0.1.3)
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS empresa_asistencia2
