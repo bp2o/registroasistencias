@@ -1,6 +1,7 @@
 # Sistema de Gestión de Asistencias
 
 Aplicación hecha con Java (MVC), y con base de datos MySQL para gestionar horarios y asistencias de funcionarios.
+POR EL MOMENTO ESTA EN DESARROLLO AUN!!
 
 ## Estructura del proyecto
 src/
