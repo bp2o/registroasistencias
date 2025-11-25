@@ -28,6 +28,7 @@ src/
 │   ├── FuncionarioCrearJustificationView.java
 │   ├── FuncionarioDashboardView.java
 │   ├── FuncionarioHorariosView.java
+│   ├── FuncionarioVerJustificacion.java
 │   ├── HorarioFormView.java
 │   ├── LoginView.java
 │   └── RegisterView.java
