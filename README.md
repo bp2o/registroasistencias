@@ -1,5 +1,7 @@
 # Sistema de Gestión de Asistencias
 
+⚠️Este repositorio es solo un prototipo para una evaluación
+
 Aplicación hecha con Java (MVC), y con base de datos MySQL para gestionar horarios y asistencias de funcionarios.
 POR EL MOMENTO ESTA EN DESARROLLO AUN!!
 
