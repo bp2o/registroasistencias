@@ -50,17 +50,18 @@ src/
 - Swing (interfaz gráfica)
 
 ## Cómo ejecutar
-1. Descargar el archivo registroasistencias 0.1.3.zip
+1. Descargar el archivo registroasistencias 0.1.6.zip
 
 2. Extraer el archivo e ingresarlo al archivo local de su IDE
 
 ## En caso de no se conecte base de datos
 
-- Create la base de datos con el archivo de texto "nose", en MySQL
+- Crea la base de datos con el archivo de texto "nose" del repositorio y pegalo en MySQL
 
 - Añade el driver de mysql connector al programa
 
 - Puedes entrar en los archivos locales, para editar los datos de tu servidor
+  
 ```bash
 C:\...\RegistroAsistencia\src\utils\DBConnection.java
 
