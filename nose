@@ -1,5 +1,5 @@
 -- ============================================================
---  SISTEMA DE REGISTRO ASISTENCIAS (bp2o 0.1.3)
+--  SISTEMA DE REGISTRO ASISTENCIAS (bp2o 0.1.9)
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS empresa_asistencia2
@@ -17,7 +17,7 @@ CREATE TABLE Funcionario (
     apellido VARCHAR(50) NOT NULL,
     correo VARCHAR(100) UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
-    telefono VARCHAR(15),
+    telefono VARCHAR(15) NOT NULL,
     departamento ENUM('RRHH', 'Contabilidad', 'TI', 'Logistica') NOT NULL,
     es_admin BOOLEAN DEFAULT FALSE,
     fecha_contratacion DATE,
