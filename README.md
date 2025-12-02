@@ -17,6 +17,7 @@ src/
 │   └── JustificationDAO.java
 ├── 📂 models
 │   ├── Funcionario.java
+│   ├── FuncionarioTableModel.java
 │   ├── HorarioProgramado.java
 │   └── Justification.java
 ├── 📂 utils
@@ -52,7 +53,7 @@ src/
 - Swing (interfaz gráfica)
 
 ## Cómo ejecutar
-1. Descargar el archivo RegistroAsistencias 0.2.0.zip
+1. Descargar el archivo GestionAsistencias 0.2.0.zip
 
 2. Extraer el archivo e ingresarlo al archivo local de su IDE
 
